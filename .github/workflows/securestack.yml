@@ -26,7 +26,7 @@ jobs:
           BH_SEVERITY: critical
           BH_SCAN_TYPE: node
         run:
-          bloodhound-cli code --type $BH_SCAN_TYPE
+          bloodhound-cli code --type $BH_SCAN_TYPE --info
       - name: perform-recon-scan
         shell: bash
         env:
