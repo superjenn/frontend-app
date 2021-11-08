@@ -1,0 +1,38 @@
+name: Perform Bloodhound Scans
+on: [push]
+jobs:
+  Perform-Bloodhound-Scans:
+    runs-on: ubuntu-latest
+    container: securestackau/bloodhound-cli:latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: '0'
+      - name: perform-secret-scan
+        shell: bash
+        env:
+          BH_APP_ID=05f37277-0407-4f14-ae96-4e787edbc61e
+          BH_API_KEY: ${{ secrets.BH_API_KEY }}
+          BH_SEVERITY: critical
+        run:
+          bloodhound-cli code -s
+      - name: perform-code-scan
+        shell: bash
+        env:
+          BH_APP_ID=05f37277-0407-4f14-ae96-4e787edbc61e
+          BH_API_KEY: ${{ secrets.BH_API_KEY }}
+          BH_SEVERITY: critical
+          BH_SCAN_TYPE: node
+        run:
+          bloodhound-cli code --type $BH_SCAN_TYPE
+      - name: perform-recon-scan
+        shell: bash
+        env:
+          BH_APP_ID=05f37277-0407-4f14-ae96-4e787edbc61e
+          BH_API_KEY: ${{ secrets.BH_API_KEY }}
+          BH_SEVERITY: critical
+          BH_TARGET: app.niftybank.org
+        run:
+          bloodhound-cli recon -m -r -t $BH_TARGET
