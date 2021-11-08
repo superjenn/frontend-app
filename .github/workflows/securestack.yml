@@ -36,3 +36,4 @@ jobs:
           BH_TARGET: app.niftybank.org
         run:
           bloodhound-cli recon -m -r -t $BH_TARGET
+          
