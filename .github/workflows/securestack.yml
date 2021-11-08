@@ -17,7 +17,7 @@ jobs:
           BH_API_KEY: ${{ secrets.BH_API_KEY }}
           BH_SEVERITY: critical
         run:
-          bloodhound-cli code -s
+          bloodhound-cli code -s --ci
       - name: perform-code-scan
         shell: bash
         env:
@@ -35,5 +35,5 @@ jobs:
           BH_SEVERITY: critical
           BH_TARGET: app.niftybank.org
         run:
-          bloodhound-cli recon -m -r -t $BH_TARGET
+          bloodhound-cli recon -m -r -t $BH_TARGET --ci
           
