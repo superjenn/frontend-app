@@ -6,6 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Run SecureStack to check for vulnerabilities
-        uses: securestack/actions/securestack@master
+        uses: securestack/actions/securestack@main
         env:
           SECURESTACK_API_KEY: ${{ secrets.SECURESTACK_API_KEY }}
