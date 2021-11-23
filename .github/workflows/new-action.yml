@@ -1,0 +1,11 @@
+name: Example workflow using SecureStack
+on: push
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Run SecureStack to check for vulnerabilities
+        uses: securestack/actions/securestack@master
+        env:
+          SECURESTACK_API_KEY: ${{ secrets.SECURESTACK_API_KEY }}
