@@ -1,11 +1,22 @@
-name: Example workflow using SecureStack
+name: Example Workflow Using SecureStack Actions
 on: push
 jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Run SecureStack to check for vulnerabilities
-        uses: securestack/actions/securestack@main
-        env:
-          SECURESTACK_API_KEY: ${{ secrets.SECURESTACK_API_KEY }}
+      - name: Software Composition Analysis Step
+        id: code
+        uses: NiftyBank/actions/code@main
+        with:
+          securestack_api_key: ${{ secrets.SECURESTACK_API_KEY_SECRET }}
+          securestack_app_id: '8e9778f3-c151-4e82-a446-b945b0d3a15d'
+          severity: critical
+          language: node
+      - name: Secrets Analysis Step
+        id: secrets
+        uses: SecureStackCo/actions/secrets@main
+        with:
+          securestack_api_key: ${{ secrets.SECURESTACK_API_KEY_SECRET }}
+          securestack_app_id: '8e9778f3-c151-4e82-a446-b945b0d3a15d'
+          severity: critical
+          flags: '-z -i'
