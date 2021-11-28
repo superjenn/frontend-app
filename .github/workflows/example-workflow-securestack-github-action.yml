@@ -14,7 +14,7 @@ jobs:
         uses: NiftyBank/niftybank-app/actions/exposure@master
         with:
           securestack_api_key: ${{ secrets.SECURESTACK_API_KEY_SECRET }}
-          securestack_app_id: '8e9778f3-c151-4e82-a446-b945b0d3a15d'
+          securestack_app_id: 'abb7fb5c-fa15-4baa-9dfd-3e77316f80a2'
           severity: critical
           flags: '--dom --realtime'
       - name: SCA Analysis Step
@@ -22,7 +22,7 @@ jobs:
         uses: NiftyBank/niftybank-app/actions/code@master
         with:
           securestack_api_key: ${{ secrets.SECURESTACK_API_KEY_SECRET }}
-          securestack_app_id: '8e9778f3-c151-4e82-a446-b945b0d3a15d'
+          securestack_app_id: 'abb7fb5c-fa15-4baa-9dfd-3e77316f80a2'
           severity: critical
           language: node
       - name: Secrets Analysis Step
@@ -30,6 +30,6 @@ jobs:
         uses: NiftyBank/niftybank-app/actions/secrets@master
         with:
           securestack_api_key: ${{ secrets.SECURESTACK_API_KEY_SECRET }}
-          securestack_app_id: '8e9778f3-c151-4e82-a446-b945b0d3a15d'
+          securestack_app_id: 'abb7fb5c-fa15-4baa-9dfd-3e77316f80a2'
           severity: critical
           flags: '-d 50'
