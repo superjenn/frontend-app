@@ -16,7 +16,7 @@ inputs:
   package_metadata_path:
     description: 'Optional location for package metadata files'
     required: false
-    default: '.'
+    default: './'
 outputs:
   result:
     description: 'Code Analysis Result'
