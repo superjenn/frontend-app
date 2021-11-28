@@ -9,6 +9,21 @@ jobs:
         uses: actions/checkout@v2.4.0
         with:
           fetch-depth: 0
+      - name: Exposure Analysis Step
+        id: exposure
+        uses: NiftyBank/niftybank-app/actions/exposure@master
+        with:
+          securestack_api_key: ${{ secrets.SECURESTACK_API_KEY_SECRET }}
+          securestack_app_id: '8e9778f3-c151-4e82-a446-b945b0d3a15d'
+          severity: critical
+      - name: SCA Analysis Step
+        id: code
+        uses: NiftyBank/niftybank-app/actions/code@master
+        with:
+          securestack_api_key: ${{ secrets.SECURESTACK_API_KEY_SECRET }}
+          securestack_app_id: '8e9778f3-c151-4e82-a446-b945b0d3a15d'
+          severity: critical
+          language: node
       - name: Secrets Analysis Step
         id: secrets
         uses: NiftyBank/niftybank-app/actions/secrets@master
