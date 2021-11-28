@@ -7,7 +7,7 @@ jobs:
       - name: Checkout repo to run secrets analysis on it
         id: checkout
         uses: actions/checkout@v2.4.0
-      - name: List Project Root
+      - name: List Project Roott
         shell: bash
         run: pwd; ls -la
       - name: Secrets Analysis Step
