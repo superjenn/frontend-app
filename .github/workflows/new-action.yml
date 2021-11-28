@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Software Composition Analysis Step
         id: code
-        uses: NiftyBank/actions/code@main
+        uses: NiftyBank/niftybank-app/actions/code@main
         with:
           securestack_api_key: ${{ secrets.SECURESTACK_API_KEY_SECRET }}
           securestack_app_id: '8e9778f3-c151-4e82-a446-b945b0d3a15d'
@@ -14,7 +14,7 @@ jobs:
           language: node
       - name: Secrets Analysis Step
         id: secrets
-        uses: NiftyBank/actions/secrets@main
+        uses: NiftyBank/niftybank-app/actions/secrets@main
         with:
           securestack_api_key: ${{ secrets.SECURESTACK_API_KEY_SECRET }}
           securestack_app_id: '8e9778f3-c151-4e82-a446-b945b0d3a15d'
