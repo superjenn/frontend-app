@@ -4,4 +4,4 @@
 # or splits `args` in a string separated by whitespace.
 sh -c "pwd; ls -la"
 sh -c "echo $*"
-sh -c "/bin/bloodhound-cli -s -v -d 50"
+sh -c "/bin/bloodhound-cli code -s -v -d 50"
