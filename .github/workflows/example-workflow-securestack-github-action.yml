@@ -4,7 +4,7 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo to run secrets analysis on it
+      - name: Checkout repo for running secrets analysis within workflow
         id: checkout
         uses: actions/checkout@v2.4.0
         with:
@@ -16,7 +16,7 @@ jobs:
           securestack_api_key: ${{ secrets.SECURESTACK_API_KEY_SECRET }}
           securestack_app_id: 'abb7fb5c-fa15-4baa-9dfd-3e77316f80a2'
           severity: critical
-          flags: '--dom --realtime'
+          flags: '--dom'
       - name: SCA Analysis Stepp
         id: code
         uses: NiftyBank/niftybank-app/actions/code@master
