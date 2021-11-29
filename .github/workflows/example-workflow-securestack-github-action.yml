@@ -17,7 +17,7 @@ jobs:
           securestack_app_id: 'abb7fb5c-fa15-4baa-9dfd-3e77316f80a2'
           severity: critical
           flags: '--dom --realtime'
-      - name: SCA Analysis Step
+      - name: SCA Analysis Stepp
         id: code
         uses: NiftyBank/niftybank-app/actions/code@master
         with:
