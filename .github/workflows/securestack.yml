@@ -13,26 +13,26 @@ jobs:
       - name: perform-secret-scan
         shell: bash
         env:
-          BH_APP_ID: 10cadb82-9a8c-49a4-b9f3-087edb44c275
+          BH_APP_ID: ad60440c-8215-478e-a553-8c1d172bf8e8
           BH_API_KEY: ${{ secrets.BH_API_KEY }}
           BH_SEVERITY: critical
         run:
-          bloodhound-cli code -s --ci
+          bloodhound-cli code -s
       - name: perform-code-scan
         shell: bash
         env:
-          BH_APP_ID: 10cadb82-9a8c-49a4-b9f3-087edb44c275
+          BH_APP_ID: ad60440c-8215-478e-a553-8c1d172bf8e8
           BH_API_KEY: ${{ secrets.BH_API_KEY }}
           BH_SEVERITY: critical
           BH_SCAN_TYPE: node
         run:
-          bloodhound-cli code --type $BH_SCAN_TYPE --info
+          bloodhound-cli code -t node -a $BH_APP_ID --info
       - name: perform-recon-scan
         shell: bash
         env:
-          BH_APP_ID: 10cadb82-9a8c-49a4-b9f3-087edb44c275
+          BH_APP_ID: ad60440c-8215-478e-a553-8c1d172bf8e8
           BH_API_KEY: ${{ secrets.BH_API_KEY }}
           BH_SEVERITY: critical
           BH_TARGET: app.niftybank.org
         run:
-          bloodhound-cli recon -m -r -t $BH_TARGET --ci
+          bloodhound-cli recon -m -r -a $BH_APP_ID
