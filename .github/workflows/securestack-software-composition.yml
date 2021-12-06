@@ -1,0 +1,25 @@
+name: SecureStack Application Composition Analysis Action
+on: push
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo for running code analysis within workflow
+        id: checkout
+        uses: actions/checkout@v2.4.0
+        with:
+          fetch-depth: 0
+      - name: Run script file
+        run: |
+          pwd
+          ls -alrt
+        shell: bash
+      - name: Code Analysis Step
+        id: code
+        uses: SecureStackCo/actions-code@main
+        with:
+          securestack_api_key: ${{ secrets.SECURESTACK_API_KEY_SECRET }}
+          securestack_app_id: 'ad60440c-8215-478e-a553-8c1d172bf8e8'
+          severity: critical
+          language: node
+          flags: '--path /github/workspace/'
