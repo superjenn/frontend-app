@@ -19,7 +19,7 @@ jobs:
         uses: SecureStackCo/actions-code@main
         with:
           securestack_api_key: ${{ secrets.SECURESTACK_API_KEY_SECRET }}
-          securestack_app_id: 'ad60440c-8215-478e-a553-8c1d172bf8e8'
+          securestack_app_id: 0a25bef3-1920-4bcf-840b-7ff35216b243
           severity: critical
           language: node
           flags: '--path /github/workspace/'
