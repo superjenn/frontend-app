@@ -10,15 +10,15 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: '0'
-      - name: perform-secret-scan
+      - name: SecureStack Secrets Scan
         shell: bash
         env:
           BH_APP_ID: ad60440c-8215-478e-a553-8c1d172bf8e8
           BH_API_KEY: ${{ secrets.BH_API_KEY }}
           BH_SEVERITY: critical
         run:
-          bloodhound-cli code -s
-      - name: perform-code-scan
+          bloodhound-cli code -s -a $BH_APP_ID
+      - name: SecureStack SCA scan
         shell: bash
         env:
           BH_APP_ID: ad60440c-8215-478e-a553-8c1d172bf8e8
@@ -26,13 +26,12 @@ jobs:
           BH_SEVERITY: critical
           BH_SCAN_TYPE: node
         run:
-          bloodhound-cli code -t node -a $BH_APP_ID --info
-      - name: perform-recon-scan
+          bloodhound-cli code -t $BH_SCAN_TYPE -a $BH_APP_ID --info
+      - name: SecureStack web vulnerability scan
         shell: bash
         env:
           BH_APP_ID: ad60440c-8215-478e-a553-8c1d172bf8e8
           BH_API_KEY: ${{ secrets.BH_API_KEY }}
           BH_SEVERITY: critical
-          BH_TARGET: app.niftybank.org
         run:
           bloodhound-cli recon -m -r -a $BH_APP_ID
