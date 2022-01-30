@@ -14,13 +14,10 @@ jobs:
         id: secrets
         uses: SecureStackCo/actions-secrets@v0.1.0
         with:
-          BH_APP_ID: ad60440c-8215-478e-a553-8c1d172bf8e8
-          BH_API_KEY: ${{ secrets.BH_API_KEY }}
-          BH_SEVERITY: critical
-          securestack_api_key: 93627135.VNyjWxf4YHXjVUtg8p6B
+          securestack_api_key: ${{ secrets.SECURESTACK_API_KEY_SECRET }}
           securestack_app_id: ad60440c-8215-478e-a553-8c1d172bf8e8
           severity: critical
-          flags: '-d 1 -a ad60440c-8215-478e-a553-8c1d172bf8e8'
+          flags: '-d 1 -a $securestack_app_id'
 
       - name: Code Analysis Step
         id: code
