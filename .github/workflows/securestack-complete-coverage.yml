@@ -17,7 +17,7 @@ jobs:
           securestack_api_key: ${{ secrets.SECURESTACK_API_KEY_SECRET }}
           securestack_app_id: ad60440c-8215-478e-a553-8c1d172bf8e8
           severity: critical
-          flags: "-d 1 -a $securestack_app_id"
+          flags: "-d 1 -a ${securestack_app_id}"
 
       - name: Code Analysis Step
         id: code
