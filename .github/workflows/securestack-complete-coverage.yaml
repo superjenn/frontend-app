@@ -40,4 +40,6 @@ jobs:
           flags: '-r'
     steps:   
       - name: Get variables
-        run: echo "securestack_api_key $securestack_api_key securestack_app_id $securestack_app_id BH_API_KEY $BH_API_KEY BH_APP_ID $BH_APP_ID"
+        run: |
+          echo "securestack_api_key $securestack_api_key securestack_app_id $securestack_app_id BH_API_KEY $BH_API_KEY BH_APP_ID $BH_APP_ID"
+        shell: bash
