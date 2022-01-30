@@ -9,6 +9,7 @@ jobs:
         uses: actions/checkout@v2.4.0
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Secrets Analysis Step
         id: secrets
         uses: SecureStackCo/actions-secrets@v0.1.0
