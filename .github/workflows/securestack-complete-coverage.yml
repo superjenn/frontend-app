@@ -37,9 +37,5 @@ jobs:
           securestack_app_id: ad60440c-8215-478e-a553-8c1d172bf8e83
           severity: critical
           flags: '-r -a ad60440c-8215-478e-a553-8c1d172bf8e8'
-  
-      - name: Echo 4 variables
-        run: |
-          echo "securestack_api_key $securestack_api_key securestack_app_id $securestack_app_id BH_API_KEY $BH_API_KEY BH_APP_ID $BH_APP_ID"
-        shell: bash
+
   
