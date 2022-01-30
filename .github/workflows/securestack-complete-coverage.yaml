@@ -1,0 +1,45 @@
+name: SecureStack complete GitHub Action - One Action to rule them all!
+on: push
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo for running secrets analysis within workflow
+        id: checkout
+        uses: actions/checkout@v2.4.0
+        with:
+          fetch-depth: 0
+      - name: Secrets Analysis Step
+        id: secrets
+        uses: SecureStackCo/actions-secrets@v0.1.0
+        with:
+          securestack_api_key: ${{ secrets.SECURESTACK_API_KEY_SECRET }}
+          securestack_app_id: 0a25bef3-1920-4bcf-840b-7ff35216b243
+          severity: critical
+          flags: '-d 1'
+
+    steps:
+      - name: Checkout repo for running code analysis within workflow
+        id: checkout
+        uses: actions/checkout@v2.4.0
+        with:
+          fetch-depth: 0
+      - name: Code Analysis Step
+        id: code
+        uses: SecureStackCo/actions-code@main
+        with:
+          securestack_api_key: ${{ secrets.SECURESTACK_API_KEY_SECRET }}
+          securestack_app_id: 0a25bef3-1920-4bcf-840b-7ff35216b243
+          severity: critical
+          language: node
+          flags: '--path /github/workspace/'
+
+    steps:
+      - name: Web Vulnerability Exposure Analysis Step
+        id: exposure
+        uses: SecureStackCo/actions-exposure@v0.1.2
+        with:
+          securestack_api_key: ${{ secrets.SECURESTACK_API_KEY_SECRET }}
+          securestack_app_id: 0a25bef3-1920-4bcf-840b-7ff35216b243
+          severity: critical
+          flags: '-r'
