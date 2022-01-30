@@ -27,7 +27,7 @@ jobs:
           securestack_app_id: ad60440c-8215-478e-a553-8c1d172bf8e8
           severity: high
           language: node
-          flags: '--path /github/workspace/'
+          flags: '--path /github/workspace/ -a ad60440c-8215-478e-a553-8c1d172bf8e8'
 
       - name: Web Vulnerability Exposure Analysis Step
         id: exposure
@@ -36,7 +36,7 @@ jobs:
           securestack_api_key: ${{ secrets.SECURESTACK_API_KEY_SECRET }}
           securestack_app_id: ad60440c-8215-478e-a553-8c1d172bf8e83
           severity: critical
-          flags: '-r'
+          flags: '-r -a ad60440c-8215-478e-a553-8c1d172bf8e8'
   
       - name: Echo 4 variables
         run: |
