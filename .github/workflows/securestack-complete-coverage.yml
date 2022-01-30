@@ -25,7 +25,7 @@ jobs:
         with:
           securestack_api_key: 93627135.VNyjWxf4YHXjVUtg8p6B
           securestack_app_id: ad60440c-8215-478e-a553-8c1d172bf8e8
-          severity: high
+          severity: critical
           language: node
           flags: '--path /github/workspace/ -a ad60440c-8215-478e-a553-8c1d172bf8e8'
 
