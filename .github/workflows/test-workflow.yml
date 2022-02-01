@@ -9,11 +9,6 @@ jobs:
         uses: actions/checkout@v2.4.0
         with:
           fetch-depth: 0
-      - name: Run script file
-        run: |
-          pwd
-          ls -al
-        shell: bash
       - name: Secrets Analysis Step
         id: secrets
         uses: SecureStackCo/actions-secrets@v0.1.2
@@ -21,4 +16,4 @@ jobs:
           securestack_api_key: ${{ secrets.SECURESTACK_API_KEY_SECRET }}
           securestack_app_id: 'ad60440c-8215-478e-a553-8c1d172bf8e8'
           severity: critical
-          flags: '-d 999'
+          flags: '-d 1'
