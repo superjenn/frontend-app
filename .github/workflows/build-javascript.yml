@@ -15,4 +15,4 @@ jobs:
       - name: Create SBOM
         uses: CycloneDX/gh-node-module-generatebom@master
         with: 
-          output: app.niftybank.org.bom.xml
+          output: './app.niftybank.org.bom.xml'
