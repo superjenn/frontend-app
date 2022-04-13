@@ -14,4 +14,4 @@ jobs:
       - run: npm test
       - name: Create SBOM
         uses: CycloneDX/gh-node-module-generatebom@master
-        output: app.niftybank.org.bom.xml
+          output: app.niftybank.org.bom.xml
