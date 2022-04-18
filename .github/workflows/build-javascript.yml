@@ -16,3 +16,4 @@ jobs:
         uses: CycloneDX/gh-node-module-generatebom@master
         with: 
           output: './app.niftybank.org.bom.xml'
+          path: './bom_directory/'
