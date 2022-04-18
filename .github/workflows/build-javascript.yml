@@ -12,6 +12,8 @@ jobs:
           node-version: '14'
       - run: npm install
       - run: npm test
+      - name: Create bom_directory
+      - run: mkdir ./bom_directory/
       - name: Create SBOM
         uses: CycloneDX/gh-node-module-generatebom@master
         with: 
