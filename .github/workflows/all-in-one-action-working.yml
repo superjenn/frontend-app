@@ -39,5 +39,6 @@ jobs:
         id: sbom
         uses: CycloneDX/gh-node-module-generatebom@master
         with: 
-          output: './bom_directory/app.niftybank.org.cyclonedx.bom.xml'
+          output: './app.niftybank.org.cyclonedx.bom.xml'
           path: './'
+          
