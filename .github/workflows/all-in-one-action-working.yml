@@ -35,8 +35,17 @@ jobs:
           severity: critical
           flags: '--dom -r --info'
           
+      - name: SecureStack - Application Bill of Materials
+        id: securestack-sbom
+        uses: SecureStackCo/actions-exposure@v0.1.3
+        with:
+          securestack_api_key: ${{ secrets.SECURESTACK_API_KEY }}
+          securestack_app_id: ${{ secrets.SECURESTACK_APP_ID }}
+          severity: critical
+          flags: 'SBOM -r'
+          
       - name: Generate CycloneDX SBOM
-        id: sbom
+        id: cyclonedx-sbom
         uses: CycloneDX/gh-node-module-generatebom@master
         with: 
           output: './app.niftybank.org.cyclonedx.bom.xml'
