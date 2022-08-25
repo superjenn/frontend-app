@@ -4,8 +4,6 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - name: Update Bloodhound CLI
-        run: bloodhound-cli update
       - name: Application Bill-of-Materials Step
         id: exposure
         uses: SecureStackCo/actions-abom@v0.1.2
