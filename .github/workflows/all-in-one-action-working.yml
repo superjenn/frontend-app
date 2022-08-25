@@ -42,7 +42,6 @@ jobs:
           securestack_api_key: ${{ secrets.SECURESTACK_API_KEY_SECRET }}
           securestack_app_id: ${{ secrets.SECURESTACK_APP_ID }}
           severity: critical
-          flags: '-r'
           
       - name: Generate CycloneDX SBOM
         id: cyclonedx-sbom
