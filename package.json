@@ -17,16 +17,18 @@
     "start": "node src/index.js"
   },
   "dependencies": {
+    "@cyclonedx/cyclonedx-npm": "^1.0.0-beta.5",
     "@types/archiver": "^3.1.0",
     "archiver": "^5.0.0",
     "async": "^3.2.0",
     "axios": "^0.21.1",
-    "es6-set": "^0.1.5",
-    "unfetch": "^4.1.0",
-    "yup": "^0.32.0",
-    "immer": "^9.0.0",
     "electron": "^10.0.0",
-    "minimist": "^1.2.5"
+    "es6-set": "^0.1.5",
+    "immer": "^9.0.0",
+    "minimist": "^1.2.5",
+    "sbom": "^0.0.0",
+    "unfetch": "^4.1.0",
+    "yup": "^0.32.0"
   },
   "eslintConfig": {
     "extends": "react-app"
