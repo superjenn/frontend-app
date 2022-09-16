@@ -1,4 +1,4 @@
-name: All-In-One Action Workflow
+name: SecureStack All-In-One Action Workflow
 on: push
 jobs:
   security:
