@@ -1,4 +1,4 @@
-name: Example Workflow Using SecureStack Application Bill-of-Materials (ABOM)
+name: SecureStack Application Bill-of-Materials (ABOM)
 on: push
 jobs:
   security:
