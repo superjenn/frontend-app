@@ -1,4 +1,4 @@
-name: Example Workflow Using SecureStack Web Vulnerability Exposure Action
+name: SecureStack Web Vulnerability Exposure Action Workflow
 on: push
 jobs:
   security:
