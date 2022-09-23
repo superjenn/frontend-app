@@ -11,3 +11,11 @@ jobs:
           securestack_api_key: ${{ secrets.SECURESTACK_API_KEY }}
           securestack_app_id: ${{ secrets.SECURESTACK_APP_ID }}
           severity: critical
+          
+      - name: Generate CycloneDX SBOM
+        id: cyclonedx-sbom
+        uses: CycloneDX/gh-node-module-generatebom@master
+        with: 
+          output: './cyclonedx.bom.xml'
+          path: './'
+          
