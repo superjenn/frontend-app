@@ -1,4 +1,4 @@
-name: SecureStack All-In-One Action Workflow
+name: SecureStack All-In-One Action Workflow - Optus demo
 on: push
 jobs:
   security:
