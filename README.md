@@ -5,5 +5,5 @@ This project builds the NiftyBank App which you can find at https://app.niftyban
 
 There are multiple components to this app.
 
-yada yada
+Thanks for using this GitHub Action!
 
