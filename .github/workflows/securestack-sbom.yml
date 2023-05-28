@@ -4,15 +4,22 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - name: Create SBOM
+      - name: SecureStack - Software Bill of Materials
         id: sbom
-        uses: SecureStackCo/actions-sbom@v0.1.1
+        uses: SecureStackCo/actions-sbom@v0.1.5
         with:
           securestack_api_key: ${{ secrets.SECURESTACK_API_KEY }}
           securestack_app_id: ${{ secrets.SECURESTACK_APP_ID }}
           severity: critical
+        
+      - name: Generate SecureStack SBOM artifact
+        id: artifact
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          path: ${{ steps.sbom.outputs.fileName }}
+          name: "app.niftybank.org.sbom"
           
-      - name: Generate CycloneDX SBOM
+      - name: Generate CycloneDX SBOM artifact
         id: cyclonedx-sbom
         uses: CycloneDX/gh-node-module-generatebom@master
         with: 
