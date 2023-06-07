@@ -46,9 +46,9 @@ jobs:
           securestack_app_id: ${{ secrets.SECURESTACK_APP_ID }}
           severity: critical
         
-      - name: Generate SBOM artifact
-        id: artifact
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          path: ${{ steps.sbom.outputs.fileName }}
-          name: "app.niftybank.org.sbom"
+#      - name: Generate SBOM artifact
+#        id: artifact
+#        uses: actions/upload-artifact@v3.1.0
+#        with:
+#          path: ${{ steps.sbom.outputs.fileName }}
+#          name: "app.niftybank.org.sbom"
