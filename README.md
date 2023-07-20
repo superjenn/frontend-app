@@ -8,4 +8,6 @@ There are multiple components to this app.
 Thanks for using this GitHub Action!
 
 :)
+Yay!
+
 
