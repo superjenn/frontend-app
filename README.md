@@ -1,13 +1,9 @@
-# NiftyBank online application
-# WE built this to be purposedly vulnerable
+# Demo online application
+## Javascript app using React
 
-This project builds the NiftyBank App which you can find at https://app.niftybank.org 
+This project builds the frontend App.  Follow the standard react build scripts.
 
 There are multiple components to this app.
 
-Thanks for using this GitHub Action!
-
-:)
-Yay!
 
 
